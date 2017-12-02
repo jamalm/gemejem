@@ -3,21 +3,10 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class GridMap : MonoBehaviour {
-    /**
-    public int sizeX = 0;
-    public int sizeZ = 0;
-    public float slotSize;
-    public GridSlot[,] slots;
-    public GameObject plane;
-    public Vector2[,] positions;
-    **/
 
     int sizeX;
     int sizeZ;
-    float slotwidth;
-    float slotlength;
     public GridSlot[,] slots;
-    public GameObject plane;
 
     // Use this for initialization
     void Start () {
@@ -29,24 +18,30 @@ public class GridMap : MonoBehaviour {
 		
 	}
 
-    public void populateGrid(GridSlot[,] slots)
+    public void populateGrid(GameObject[,] slots)
     {
-        this.slots = slots;
-        SetCoords(this.slots);
+        for (int i = 0; i < sizeX; i++)
+        {
+            for (int j = 0; j < sizeZ; j++)
+            {
+                this.slots[i, j] = slots[i, j].GetComponent<GridSlot>();
+            }
+        }
     }
 
     public void SetXY(int x, int y)
     {
         sizeX = x;
         sizeZ = y;
-        slotwidth = sizeX;
-        slotlength = sizeZ;
     }
 
-    public void SetCoords(GridSlot[,] slots)
+    public void getGrid()
     {
 
     }
-    
-    
+
+    public GameObject getSlot(Vector2 index)
+    {
+        return slots[(int)index.x, (int)index.y].gameObject;
+    }
 }

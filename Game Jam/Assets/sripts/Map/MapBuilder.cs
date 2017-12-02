@@ -8,13 +8,14 @@ public class MapBuilder : MonoBehaviour {
     public int sizeZ = 0;
     public float tilesize = 5f;
     public GameObject tile;
-
+    public GameObject grid;
+    GridMap gridmap;
     bool isSet = false;
     
     
 	// Use this for initialization
 	void Start () {
- 
+        gridmap = grid.GetComponent<GridMap>();
 	}
 	
 	// Update is called once per frame
@@ -38,6 +39,6 @@ public class MapBuilder : MonoBehaviour {
                 Debug.Log("Generating slot: " + slots[i,j]);
             }
         }
-        //grid.populateGrid(slots);
+        gridmap.populateGrid(slots);
     }
 }
