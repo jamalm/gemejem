@@ -6,21 +6,20 @@ public class MapBuilder : MonoBehaviour {
 
     public int sizeX = 0;
     public int sizeZ = 0;
+    public float tilesize = 5f;
 
-    public GameObject gridPrefab;
-    public GameObject slotprefab;
-
-    public GridSlot slot;
-    public GridMap grid;
+    //GameObject grid;
+    GameObject tile;
 
     bool isSet = false;
     
     
 	// Use this for initialization
 	void Start () {
-        grid = Instantiate(gridPrefab).GetComponent<GridMap>();
-        grid.SetXY(sizeX, sizeZ);
-        slot = Instantiate(slotprefab).GetComponent<GridSlot>();
+        tilesize = 5f;
+        tile = GameObject.CreatePrimitive(PrimitiveType.Cube);
+        tile.transform.localScale = new Vector3(tilesize, .2f, tilesize);
+        
 	}
 	
 	// Update is called once per frame
@@ -35,15 +34,15 @@ public class MapBuilder : MonoBehaviour {
     public void GenerateGrid()
     {
         Debug.Log("Generating Grid");
-        GridSlot[,] slots = new GridSlot[sizeX, sizeZ];
+        GameObject[,] slots = new GameObject[sizeX, sizeZ];
         for(int i = 0; i < sizeX; i++)
         {
             for(int j = 0; j < sizeZ; j++)
             {
-                slots[i,j] = Instantiate(slotprefab, grid.transform);
+                slots[i,j] = Instantiate(tile,new Vector3(tilesize*i, 0.2f, tilesize*j),Quaternion.identity);
                 Debug.Log("Generating slot: " + slots[i,j]);
             }
         }
-        grid.populateGrid(slots);
+        //grid.populateGrid(slots);
     }
 }

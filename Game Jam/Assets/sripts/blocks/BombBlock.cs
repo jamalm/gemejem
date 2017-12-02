@@ -7,7 +7,7 @@ public class BombBlock : Block {
     public int explosionStrength = 5;
 	// Use this for initialization
 	void Start () {
-        type = GetType().Name;
+        blockType = GetType().Name;
         SetData(new Vector2(0,0), new Vector2(0,0));
 	}
 
