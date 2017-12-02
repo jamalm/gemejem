@@ -17,7 +17,6 @@ public class BombBlock : Block {
 	// Update is called once per frame
 	void Update () {
 
-        SetData(new Vector2(0, 1), Orientation.Up);
 		
 	}
 

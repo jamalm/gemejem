@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Networking;
 
-public static class RequestHandler {
+public class RequestHandler : MonoBehaviour {
 
     private static string apiLink = "http://ec2-54-201-19-112.us-west-2.compute.amazonaws.com:8000/api/";
     private static string FUNC_NAME_FOR_NEW_PLAYER = "players/";
@@ -20,21 +20,31 @@ public static class RequestHandler {
     // List<IMultipartFormSection> formData = new List<IMultipartFormSection>() is the data 
 
 
-    public static UnityWebRequest Post(string postUrl, List<IMultipartFormSection> postData) {
-        return UnityWebRequest.Post(postUrl, postData);
+    public IEnumerator Post(string postUrl, List<IMultipartFormSection> postData) {
+        Debug.Log("I totally made it");
+        var request = UnityWebRequest.Post(postUrl, postData);
+         yield return request.SendWebRequest();
     }
 
-    public static UnityWebRequest Get(string url) {
+    public UnityWebRequest Get(string url) {
         return UnityWebRequest.Get(url);
     }
 
     // TODO - Make a new game
-    public static void MakeNewGame(string playerId) {
+    public void MakeNewGame(string playerId) {
         var response = Post(FUNC_NAME_FOR_NEW_GAME + playerId, null);
     }
 
-    public static void MakePlayerId() {
-        
+    public string MakePlayerId(string username) {
+        var postData = new List<IMultipartFormSection>();
+        postData.Add(new MultipartFormFileSection("username" , username));
+        Debug.Log(postData);
+
+        StartCoroutine(Post(apiLink + FUNC_NAME_FOR_NEW_PLAYER, postData));
+        Debug.Log(FUNC_NAME_FOR_NEW_PLAYER);
+ 
+        return "no";
+
     }
     // TODO - Make a new player id
     // TODO - Send a map
@@ -42,8 +52,8 @@ public static class RequestHandler {
         
     }
     public static void SendBlock() {
-        //FOr block i map
-        //SEnd block
+        //For block i map
+        //Send block
     }
     // TODO - Get a map
     public static void GetMap() {
@@ -58,12 +68,12 @@ public static class RequestHandler {
         
     }
     // TODO - QUery for joined player
-    public static bool HasPlayerJoined(string gameId) {
+    public bool HasPlayerJoined(string gameId) {
         var response = Get(FUNC_NAME_QUERY_FOR_NEW_PLAYER+gameId);
         return false;
     }
     //TODO Join a Game
-    public static void JoinGame(string gameId, string playerId) {
+    public void JoinGame(string gameId, string playerId) {
         Post(FUNC_NAME_FOR_JOIN_GAME + gameId + playerId, null);        
     }
 }
