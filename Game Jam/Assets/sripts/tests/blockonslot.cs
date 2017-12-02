@@ -6,6 +6,7 @@ public class blockonslot : MonoBehaviour {
 
 
     GridMap grid;
+    Block block;
 	// Use this for initialization
 	void Start () {
 		

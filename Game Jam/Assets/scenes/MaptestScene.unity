@@ -300,16 +300,6 @@ Prefab:
       propertyPath: m_Name
       value: Mapbuilder
       objectReference: {fileID: 0}
-    - target: {fileID: 114620321391964446, guid: ad2653849ae683e43bd9984a6f5f2b88,
-        type: 2}
-      propertyPath: sizeX
-      value: 10
-      objectReference: {fileID: 0}
-    - target: {fileID: 114620321391964446, guid: ad2653849ae683e43bd9984a6f5f2b88,
-        type: 2}
-      propertyPath: sizeZ
-      value: 10
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: ad2653849ae683e43bd9984a6f5f2b88, type: 2}
   m_IsPrefabParent: 0
