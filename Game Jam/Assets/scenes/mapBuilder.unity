@@ -236,6 +236,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   menu: {fileID: 1475474093}
   playerState: {fileID: 471297188}
+  block: {fileID: 1928697241208148, guid: 7045ffe04144546f09390b4ab23e7d93, type: 2}
 --- !u!1 &357011553
 GameObject:
   m_ObjectHideFlags: 0
@@ -337,6 +338,10 @@ MonoBehaviour:
   curObjects: 0
   spaceBar: {fileID: 1278112805}
   camera: {fileID: 1169321577}
+  wallBlock: {fileID: 1103446851429822, guid: 877a08a689bcf4193864451bbb2da059, type: 2}
+  boostBlock: {fileID: 1928697241208148, guid: 7045ffe04144546f09390b4ab23e7d93, type: 2}
+  iceBlock: {fileID: 1243244562955546, guid: f2a717c4ea25a487c9d0148f7494efcf, type: 2}
+  bombBlock: {fileID: 1360256239410874, guid: 0cd8010e1881442ee87072e91dc68a07, type: 2}
 --- !u!4 &471297190
 Transform:
   m_ObjectHideFlags: 0
@@ -615,6 +620,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   menu: {fileID: 1475474093}
   playerState: {fileID: 471297188}
+  block: {fileID: 1360256239410874, guid: 0cd8010e1881442ee87072e91dc68a07, type: 2}
 --- !u!1 &932712081
 GameObject:
   m_ObjectHideFlags: 0
@@ -905,6 +911,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   menu: {fileID: 1475474093}
   playerState: {fileID: 471297188}
+  block: {fileID: 1243244562955546, guid: f2a717c4ea25a487c9d0148f7494efcf, type: 2}
 --- !u!1 &1169321574
 GameObject:
   m_ObjectHideFlags: 0
@@ -1439,3 +1446,4 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   menu: {fileID: 1475474093}
   playerState: {fileID: 471297188}
+  block: {fileID: 1103446851429822, guid: 877a08a689bcf4193864451bbb2da059, type: 2}

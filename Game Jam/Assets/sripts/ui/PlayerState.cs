@@ -60,9 +60,16 @@ public class PlayerState : MonoBehaviour {
     public void placeObject(Vector3 pos, GridSlot gridSlot)
     {
         barScript.setCurObjects(curObjects);
-        blocks.Add(Instantiate(itemSelected, new Vector3(pos.x, pos.y+0.5f, pos.z), Quaternion.identity));
+        if(itemSelected.GetComponent<IceBlock>() != null)
+        {
+            blocks.Add(Instantiate(itemSelected, new Vector3(pos.x, pos.y -2.3f, pos.z), Quaternion.identity));
+        }
+        else
+        {
+            blocks.Add(Instantiate(itemSelected, new Vector3(pos.x, pos.y + 2.5f, pos.z), Quaternion.identity));
+        }
         GameObject newBlock = blocks[blocks.Count-1];
-        newBlock.GetComponent<IBlock>().SetData(gridSlot);
+        //newBlock.GetComponent<IBlock>().SetData(gridSlot);
         itemSelected = null;
     }
 
