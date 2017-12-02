@@ -16,6 +16,7 @@ public class MapBuilder : MonoBehaviour {
 	// Use this for initialization
 	void Start () {
         gridmap = grid.GetComponent<GridMap>();
+        gridmap.SetXY(sizeX, sizeZ);
 	}
 	
 	// Update is called once per frame
