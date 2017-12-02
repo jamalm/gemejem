@@ -25,6 +25,8 @@ public class GridMap : MonoBehaviour {
             for (int j = 0; j < sizeZ; j++)
             {
                 this.slots[i, j] = slots[i, j].GetComponent<GridSlot>();
+                this.slots[i, j].GetComponent<GridSlot>().parentGrid = this;
+                this.slots[i, j].GetComponent<GridSlot>().setPosition(new Vector2(i, j));
             }
         }
     }
@@ -35,13 +37,15 @@ public class GridMap : MonoBehaviour {
         sizeZ = y;
     }
 
-    public void getGrid()
+    public GridSlot[,] getGrid()
     {
-
+        return slots;
     }
 
-    public GameObject getSlot(Vector2 index)
+    public GridSlot getSlot(Vector2 index)
     {
-        return slots[(int)index.x, (int)index.y].gameObject;
+        return slots[(int)index.x, (int)index.y];
     }
+
+
 }
