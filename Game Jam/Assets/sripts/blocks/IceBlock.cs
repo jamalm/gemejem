@@ -9,11 +9,9 @@ public class IceBlock : Block
     void Start()
     {
 
+        type = GetType().Name;
     }
 
-    public IceBlock() :base("IceBlock") {
-
-    }
 
     // Update is called once per frame
     void Update()

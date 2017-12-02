@@ -2,21 +2,16 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class WallBlock : Block {
+public class TestSerialize : MonoBehaviour {
 
-
+    public Block block;
 	// Use this for initialization
 	void Start () {
-        type = GetType().Name;
+        Debug.Log(block.SerializeBlock());
 	}
-
 	
 	// Update is called once per frame
 	void Update () {
 		
 	}
-
-    public override void Effect(GameObject player) {
-        
-    }
 }

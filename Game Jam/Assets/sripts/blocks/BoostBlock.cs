@@ -11,7 +11,7 @@ public class BoostBlock : Block
 
     }
 
-    public BoostBlock() :base("BoostBlock") {
+    public BoostBlock() {
 
     }
 
