@@ -7,19 +7,14 @@ public class MapBuilder : MonoBehaviour {
     public int sizeX = 0;
     public int sizeZ = 0;
     public float tilesize = 5f;
-
-    //GameObject grid;
-    GameObject tile;
+    public GameObject tile;
 
     bool isSet = false;
     
     
 	// Use this for initialization
 	void Start () {
-        tilesize = 5f;
-        tile = GameObject.CreatePrimitive(PrimitiveType.Cube);
-        tile.transform.localScale = new Vector3(tilesize, .2f, tilesize);
-        
+ 
 	}
 	
 	// Update is called once per frame

@@ -51,8 +51,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2d9404963c7f9934f874ec317d20c646, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  sizeX: 100
-  sizeZ: 100
-  slotprefab: {fileID: 114693882597480136, guid: e5fbdc860f7ada243b6d3a4f678594a5,
-    type: 2}
-  grid: {fileID: 0}
+  sizeX: 10
+  sizeZ: 10
+  tilesize: 5
+  tile: {fileID: 1605524540337816, guid: 2130bec93d8926c468e02742641deac3, type: 2}
