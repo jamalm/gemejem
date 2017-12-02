@@ -12,6 +12,8 @@ public class SubButton : MonoBehaviour {
     public GameObject playerState;
     private PlayerState stateScript;
 
+    public GameObject block;
+
     // Use this for initialization
     void Start()
     {
@@ -24,7 +26,7 @@ public class SubButton : MonoBehaviour {
     private void PressButton()
     {
         menuButton.FlipExpanded();
-        stateScript.flipItemSelected();
-        stateScript.placeObject();
+        stateScript.flipItemSelected(block);
+        //stateScript.placeObject();
     }
 }

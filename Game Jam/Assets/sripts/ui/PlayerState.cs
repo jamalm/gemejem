@@ -4,7 +4,7 @@ using UnityEngine;
 using UnityEngine.UI;
 
 public class PlayerState : MonoBehaviour {
-    private bool itemSelected = false;
+    private GameObject itemSelected = null;
     public GameObject trash;
 
     public float maxObjects;
@@ -14,6 +14,13 @@ public class PlayerState : MonoBehaviour {
     private SpaceBar barScript;
 
     public Camera camera;
+
+    public GameObject wallBlock;
+    public GameObject boostBlock;
+    public GameObject iceBlock;
+    public GameObject bombBlock;
+
+    private List<GameObject> blocks = new List<GameObject>();
 
     // Use this for initialization
     void Start()
@@ -26,7 +33,8 @@ public class PlayerState : MonoBehaviour {
     // Update is called once per frame
     void Update()
     {
-        if (Input.GetMouseButtonDown(0))
+        curObjects = blocks.Count;
+        if (Input.GetMouseButtonDown(0) && itemSelected != null)
         {
             RaycastHit hit;
             Ray ray = camera.ScreenPointToRay(Input.mousePosition);
@@ -35,22 +43,27 @@ public class PlayerState : MonoBehaviour {
             {
                 Transform objectHit = hit.transform;
                 GameObject objectl = hit.transform.gameObject;
-                Debug.Log(objectl.transform.position);
+                GridSlot gridSlot = objectl.GetComponent<GridSlot>();
+                placeObject(hit.transform.position, gridSlot);
+                Debug.Log(gridSlot.getPosition());
                 // Do something with the object that was hit by the raycast.
             }
         }
     }
 
-    public void flipItemSelected()
+    public void flipItemSelected(GameObject gameObject)
     {
-        itemSelected = !itemSelected;
+        itemSelected = gameObject;
         trash.SetActive(itemSelected);
     }
 
-    public void placeObject()
+    public void placeObject(Vector3 pos, GridSlot gridSlot)
     {
-        curObjects += 1;
         barScript.setCurObjects(curObjects);
+        blocks.Add(Instantiate(itemSelected, new Vector3(pos.x, pos.y+0.5f, pos.z), Quaternion.identity));
+        GameObject newBlock = blocks[blocks.Count-1];
+        newBlock.GetComponent<IBlock>().SetData(gridSlot);
+        itemSelected = null;
     }
 
 }
