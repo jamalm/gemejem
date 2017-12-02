@@ -2,21 +2,19 @@
 using System.Collections.Generic;
 using UnityEngine;
 
+
 [RequireComponent(typeof(AudioSource))]
+
 public abstract class Block : MonoBehaviour, IBlock {
 
+    
     public string tagOfEffect = "player";
-	// Use this for initialization
-	void Start () {
-		
-	}
-	
-	// Update is called once per frame
-	void Update () {
-		
-	}
-
+    public string Type;
     public abstract void Effect(GameObject player);
+
+    public Block(string type) {
+        Type = type;
+    }
 
 
     private void OnCollisionEnter(Collision collision)

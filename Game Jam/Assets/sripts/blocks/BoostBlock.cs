@@ -11,6 +11,10 @@ public class BoostBlock : Block
 
     }
 
+    public BoostBlock() :base("BoostBlock") {
+
+    }
+
     // Update is called once per frame
     void Update()
     {

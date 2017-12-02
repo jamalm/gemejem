@@ -2,23 +2,15 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class WallBlock : Block {
-
+public class BlockSerializer : MonoBehaviour {
 
 	// Use this for initialization
 	void Start () {
+		
 	}
-
-    public WallBlock() :base("WallBlock") {
-        
-    }
 	
 	// Update is called once per frame
 	void Update () {
 		
 	}
-
-    public override void Effect(GameObject player) {
-        
-    }
 }

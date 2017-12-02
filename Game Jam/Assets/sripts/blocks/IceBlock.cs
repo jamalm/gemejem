@@ -11,6 +11,10 @@ public class IceBlock : Block
 
     }
 
+    public IceBlock() :base("IceBlock") {
+
+    }
+
     // Update is called once per frame
     void Update()
     {
