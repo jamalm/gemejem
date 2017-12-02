@@ -9,7 +9,7 @@ public class IceBlock : Block
     void Start()
     {
 
-        type = GetType().Name;
+        blockType = GetType().Name;
     }
 
 
