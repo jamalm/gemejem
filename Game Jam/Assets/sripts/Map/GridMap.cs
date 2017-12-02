@@ -4,6 +4,8 @@ using UnityEngine;
 
 public class GridMap : MonoBehaviour {
 
+    public GridSlot[][] slots;
+
 	// Use this for initialization
 	void Start () {
 		

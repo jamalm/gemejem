@@ -4,6 +4,9 @@ using UnityEngine;
 
 public class GridSlot : MonoBehaviour {
 
+    public GridMap parentGrid;
+    public Block block;
+
 	// Use this for initialization
 	void Start () {
 		
