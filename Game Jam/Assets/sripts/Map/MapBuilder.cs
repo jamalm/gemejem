@@ -20,7 +20,7 @@ public class MapBuilder : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-        if (!isSet)
+        if (isSet == false)
         {
             GenerateGrid();
             isSet = true;

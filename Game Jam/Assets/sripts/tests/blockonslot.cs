@@ -2,8 +2,10 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class testblockinit : MonoBehaviour {
+public class blockonslot : MonoBehaviour {
 
+
+    GridMap grid;
 	// Use this for initialization
 	void Start () {
 		

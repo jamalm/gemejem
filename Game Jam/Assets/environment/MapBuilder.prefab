@@ -55,3 +55,4 @@ MonoBehaviour:
   sizeZ: 10
   tilesize: 5
   tile: {fileID: 1605524540337816, guid: 2130bec93d8926c468e02742641deac3, type: 2}
+  grid: {fileID: 1889012395217476, guid: a1b1fed349bdf444d868aac54f5c1015, type: 2}
