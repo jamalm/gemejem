@@ -20,6 +20,10 @@ public class GridMap : MonoBehaviour {
 
     public void populateGrid(GameObject[,] slots)
     {
+        if (this.slots==null)
+        {
+            this.slots= new GridSlot[sizeX, sizeZ];
+        }
         for (int i = 0; i < sizeX; i++)
         {
             for (int j = 0; j < sizeZ; j++)
