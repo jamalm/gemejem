@@ -2,8 +2,9 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class WallBlock : Block {
+public class BombBlock : Block {
 
+    public int explosionStrength = 5;
 	// Use this for initialization
 	void Start () {
 		
@@ -15,6 +16,7 @@ public class WallBlock : Block {
 	}
 
     public override void Effect(GameObject player) {
-        
+
     }
+
 }
