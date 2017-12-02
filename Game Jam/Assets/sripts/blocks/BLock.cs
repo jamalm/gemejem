@@ -14,8 +14,15 @@ public abstract class Block : MonoBehaviour, IBlock {
     public string blockType;
     public abstract void Effect(GameObject player);
 
+<<<<<<< HEAD
     public void SetData(Vector2 start, Vector2 end) {
         data = new BlockData(start, end, blockType);
+=======
+    public void SetData(Vector2 start, Orientation orientation) {
+        data = new BlockData(start, orientation, blockType);
+        Debug.Log("Setting info -- ");
+        Debug.Log(JsonUtility.ToJson(data));
+>>>>>>> cfbd09008818fd8d6cc7d2976aded9394a23d243
     }
     private void OnCollisionEnter(Collision collision)
     {
