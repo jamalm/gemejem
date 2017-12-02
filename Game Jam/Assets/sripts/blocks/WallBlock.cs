@@ -2,8 +2,8 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public abstract class Block : MonoBehaviour, IBlock {
-    
+public class WallBlock : Block {
+
 	// Use this for initialization
 	void Start () {
 		
@@ -13,9 +13,4 @@ public abstract class Block : MonoBehaviour, IBlock {
 	void Update () {
 		
 	}
-
-    public void Effect() {
-        
-    }
-
 }
