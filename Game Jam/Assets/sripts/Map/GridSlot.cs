@@ -5,7 +5,9 @@ using UnityEngine;
 public class GridSlot : MonoBehaviour {
 
     public GridMap parentGrid;
-    public Block block;
+    public IBlock block;
+    public GameObject physicalSlot;
+    
 
 	// Use this for initialization
 	void Start () {
@@ -17,5 +19,22 @@ public class GridSlot : MonoBehaviour {
 		
 	}
 
+    public bool hasBlock()
+    {
+        if (block != null)
+        {
+            return true;
+        }
+        else return false;
+    }
 
+    public void setBlock(IBlock block)
+    {
+        this.block = block;
+    }
+
+    public IBlock getBlock()
+    {
+        return block;
+    }
 }
