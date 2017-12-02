@@ -16,4 +16,6 @@ public class GridSlot : MonoBehaviour {
 	void Update () {
 		
 	}
+
+
 }
