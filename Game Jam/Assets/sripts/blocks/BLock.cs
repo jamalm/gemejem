@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
+[RequireComponent(typeof(AudioSource))]
 public abstract class Block : MonoBehaviour, IBlock {
 
     public string tagOfEffect = "player";
@@ -24,6 +25,7 @@ public abstract class Block : MonoBehaviour, IBlock {
 
         if (otherObj.tag == tagOfEffect)
         {
+            GetComponent<AudioSource>().Play();
             Effect(otherObj);
         }
     }

@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class BoostBlock : Block
 {
-
+ 
     // Use this for initialization
     void Start()
     {
