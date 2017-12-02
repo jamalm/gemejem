@@ -7,7 +7,7 @@ public class WallBlock : Block {
 
 	// Use this for initialization
 	void Start () {
-        type = GetType().Name;
+        blockType = GetType().Name;
 	}
 
 	
