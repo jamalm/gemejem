@@ -8,12 +8,15 @@ public class BombBlock : Block {
 	// Use this for initialization
 	void Start () {
         blockType = GetType().Name;
-        SetData(new Vector2(0,0), new Vector2(0,0));
+        SetData(new Vector2(0,1), Orientation.Up);
+        Debug.Log(Orientation.Up);
+        Debug.Log(data);
 	}
 
 	
 	// Update is called once per frame
 	void Update () {
+
 		
 	}
 

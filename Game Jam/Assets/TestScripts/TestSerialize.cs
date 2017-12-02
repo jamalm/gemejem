@@ -8,6 +8,9 @@ public class TestSerialize : MonoBehaviour {
 	// Use this for initialization
 	void Start () {
         Debug.Log(block.SerializeBlock());
+
+        var reqHandler = new RequestHandler();
+        reqHandler.MakePlayerId("kennyk");
 	}
 	
 	// Update is called once per frame
