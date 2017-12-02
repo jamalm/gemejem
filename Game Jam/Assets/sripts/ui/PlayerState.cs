@@ -70,7 +70,7 @@ public class PlayerState : MonoBehaviour {
         }
         GameObject newBlock = blocks[blocks.Count-1];
         //newBlock.GetComponent<IBlock>().SetData(gridSlot);
-        itemSelected = null;
+        //itemSelected = null;
     }
 
 }
