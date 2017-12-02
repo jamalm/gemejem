@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class TestPush : MonoBehaviour {
+public class BLock : MonoBehaviour {
 
 	// Use this for initialization
 	void Start () {
